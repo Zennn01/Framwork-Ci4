@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Aditia Adrian</title>
+	<title>FAQ</title>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
@@ -25,17 +25,16 @@
 		<div class="row">
 			<div class="col-md-12 my-2 card">
 				<div class="card-body">
-					<h5 class="h5">Pertanyaan? (Q)</h5>
-					<p>(A) Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
+					<h5 class="h5">Apa tujuan website ini?</h5>
+					<p>Website ini bertujuan untuk menyajikan informasi dan berita terkini seputar teknologi dan dunia digital secara ringkas dan mudah dipahami.</p>
 				</div>
 			</div>
 			<div class="col-md-12 my-2 card">
 				<div class="card-body">
-					<h5 class="h5">Pertanyaan? (Q)</h5>
-					<p>(A) Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
+					<h5 class="h5">Apakah informasi di website ini selalu terbaru?</h5>
+					<p>Kami berusaha untuk selalu memperbarui konten secara berkala agar informasi yang disajikan tetap relevan dan up-to-date.</p>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 	<div class="container py-4">
