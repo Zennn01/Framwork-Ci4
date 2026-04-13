@@ -1,0 +1,21 @@
+# ENV
+.env
+
+# CI4 writable (log, cache, dll)
+writable/
+
+# vendor (kalau pakai composer, biasanya tidak di-push)
+vendor/
+
+# system (kalau pakai CI4 via composer, ini tidak perlu)
+system/
+
+# node (kalau ada)
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Bootstrap (kalau maksud kamu file custom / build sendiri)
+public/bootstrap/
