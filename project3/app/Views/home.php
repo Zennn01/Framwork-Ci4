@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MyBlog</title>
+	<title>Aditia Adrian</title>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
@@ -17,8 +17,8 @@
 	<div class="p-5 mb-4 bg-light rounded-3">
       <div class="container py-5">
         <h1 class="display-5 fw-bold">Selamat Datang</h1>
-        <!-- <p class="col-md-8 fs-4">di laman portal berita</p> -->
-        <!-- <button class="btn btn-primary btn-sm" type="button">Read more</button> -->
+        <p class="col-md-8 fs-4">di laman portal berita</p> -->
+        <button class="btn btn-primary btn-sm" type="button">Mulai Posting Berita Anda</button>
       </div>
     </div>
 
@@ -26,20 +26,20 @@
 		<div class="row">
 			<div class="col-md-12 my-2 card">
 				<div class="card-body">
-					<h5 class="h5">Mulai ngoding PHP nich</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
+					<h5 class="h5">Perkembangan Teknologi Web Semakin Pesat</h5>
+					<p>Dunia pengembangan web terus mengalami perkembangan signifikan seiring meningkatnya kebutuhan digital. Berbagai teknologi dan bahasa pemrograman digunakan untuk menciptakan website yang cepat, aman, dan responsif.</p>
 				</div>
 			</div>
 			<div class="col-md-12 my-2 card">
 				<div class="card-body">
-					<h5 class="h5">Jadi paham CSS dan JS</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
+					<h5 class="h5">Tampilan dan Interaktivitas Jadi Sorotan</h5>
+					<p>Selain performa, tampilan dan pengalaman pengguna kini menjadi fokus utama. Penggunaan teknologi front-end memungkinkan website tampil lebih menarik serta memberikan interaksi yang lebih nyaman bagi pengguna.</p>
 				</div>
 			</div>
 			<div class="col-md-12 my-2 card">
 				<div class="card-body">
-					<h5 class="h5">Codeigniter asyik juga kok</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
+					<h5 class="h5">Framework Bantu Efisiensi Pengembang</h5>
+					<p>Untuk mendukung proses pengembangan, banyak developer memanfaatkan framework yang mampu menyederhanakan struktur kode. Hal ini membuat proses pembuatan aplikasi web menjadi lebih cepat dan terorganisir.</p>
 				</div>
 			</div>
 			

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MyBlog</title>
+	<title>About</title>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
@@ -25,20 +25,20 @@
 		<div class="row">
 			<div class="col-md-12 my-2 card">
 				<div class="card-body">
-					<h5 class="h5">Siapa Aku</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
+					<h5 class="h5">Tentang Website</h5>
+					<p>Website ini merupakan platform portal berita yang menyajikan berbagai informasi terkini seputar teknologi, perkembangan digital, serta topik menarik lainnya. Konten disusun secara ringkas dan mudah dipahami agar dapat diakses oleh berbagai kalangan.</p>
 				</div>
 			</div>
 			<div class="col-md-12 my-2 card">
 				<div class="card-body">
-					<h5 class="h5">Bisa Apa Aku</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
+					<h5 class="h5">Apa yang Disajikan</h5>
+					<p>Melalui website ini, pengunjung dapat menemukan berbagai artikel informatif, mulai dari perkembangan teknologi web, tren digital, hingga pembahasan ringan yang relevan dengan kebutuhan masa kini. Setiap konten disajikan dengan tujuan memberikan informasi yang bermanfaat dan up-to-date.</p>
 				</div>
 			</div>
 			<div class="col-md-12 my-2 card">
 				<div class="card-body">
-					<h5 class="h5">Bagaimana Aku</h5>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis commodi tenetur quos ducimus repellat nulla, nam magni. Commodi iusto ad harum voluptas exercitationem facere eos earum laboriosam excepturi quas?</p>
+					<h5 class="h5">Tujuan Website</h5>
+					<p>Website ini bertujuan menjadi sumber informasi yang terpercaya dan mudah diakses. Dengan penyajian yang sederhana namun informatif, diharapkan pengunjung dapat memperoleh wawasan baru serta mengikuti perkembangan dunia digital dengan lebih mudah.</p>
 				</div>
 			</div>
 			
