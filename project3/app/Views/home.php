@@ -17,7 +17,7 @@
 	<div class="p-5 mb-4 bg-light rounded-3">
       <div class="container py-5">
         <h1 class="display-5 fw-bold">Selamat Datang</h1>
-        <p class="col-md-8 fs-4">di laman portal berita</p> -->
+        <p class="col-md-8 fs-4">di laman portal berita</p>
         <button class="btn btn-primary btn-sm" type="button">Mulai Posting Berita Anda</button>
       </div>
     </div>
