@@ -1,51 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->include('layouts/header'); ?>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MyBlog</title>
+<!-- HEADER (TEMPLATE STYLE) -->
+<section class="section-top">
+	<div class="container text-center">
+		<h1>Blog</h1>
+		<p><a href="<?= base_url('/') ?>">Home</a> / Blog</p>
+	</div>
+</section>
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
-</head>
-
-<body>
-
-	<?= $this->include('layouts/navbar'); ?>
-
-	<div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container py-5">
-        <h1 class="display-5 fw-bold">Blog</h1>
-        <!-- <p class="col-md-8 fs-4">di laman portal berita</p> -->
-        <!-- <button class="btn btn-primary btn-sm" type="button">Read more</button> -->
-      </div>
-    </div>
-
+<!-- BLOG LIST -->
+<section class="section-padding">
 	<div class="container">
 		<div class="row">
+
 			<?php foreach ($posts as $post) : ?>
-				<div class="col-md-12 my-2 card">
-					<div class="card-body">
-						<h5 class="h5"><a href="/post/<?= $post['slug'] ?>"><?= $post['title'] ?></a></h5>
-						<p><?= substr($post['content'], 0, 120) ?></p>
+				<div class="col-md-6 col-lg-4 mb-4">
+					<div class="card h-100 shadow-sm">
+
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href="<?= base_url('post/'.$post['slug']) ?>">
+									<?= $post['title'] ?>
+								</a>
+							</h5>
+
+							<p class="card-text">
+								<?= substr(strip_tags($post['content']), 0, 120) ?>...
+							</p>
+
+							<a href="<?= base_url('post/'.$post['slug']) ?>" class="btn btn-primary btn-sm">
+								Read More
+							</a>
+						</div>
+
 					</div>
 				</div>
 			<?php endforeach ?>
+
 		</div>
 	</div>
-	<div class="container py-4">
-		<footer class="pt-3 mt-4 text-muted border-top">
-			<div class="container">
-				&copy; <?= Date('Y') ?>
-			</div>
-		</footer>
-	</div>
+</section>
 
-	<!-- Jquery dan Bootsrap JS -->
-	<script src="<?= base_url('js/jquery.min.js') ?>"></script>
-	<script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
-
-</body>
-
-</html>
+<?= $this->include('layouts/footer'); ?>

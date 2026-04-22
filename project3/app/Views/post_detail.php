@@ -1,52 +1,50 @@
+<!-- NAVBAR -->
+<?= $this->include('layouts/header'); ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<!-- HEADER -->
+<section class="section-top">
+	<div class="container text-center">
+		<h1>Blog Detail</h1>
+		<p><a href="<?= base_url('/') ?>">Home</a> / Blog Detail</p>
+	</div>
+</section>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MyBlog</title>
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
-</head>
-
-<body>
-
-	<?= $this->include('layouts/navbar'); ?>
-
-	<div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container py-5">
-        <h1 class="display-5 fw-bold">Blog Detail</h1>
-        <!-- <p class="col-md-8 fs-4">di laman portal berita</p> -->
-        <!-- <button class="btn btn-primary btn-sm" type="button">Read more</button> -->
-      </div>
-    </div>
-
+<!-- DETAIL POST -->
+<section class="section-padding">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5"><?= $post['title'] ?></h5>            
-                    <span><?= $post['author'] ?> | <?= $post['created_at'] ?></span>
-					<p><?= $post['content'] ?></p>
+		<div class="row justify-content-center">
+
+			<div class="col-lg-8">
+				<div class="card shadow-sm">
+
+					<div class="card-body">
+
+						<h2 class="mb-3"><?= $post['title'] ?></h2>
+
+						<p class="text-muted">
+							<?= $post['author'] ?> | <?= date('d M Y', strtotime($post['created_at'])) ?>
+						</p>
+
+						<hr>
+
+						<div class="mt-3">
+							<?= $post['content'] ?>
+						</div>
+
+						<div class="mt-4">
+							<a href="<?= base_url('post') ?>" class="btn btn-secondary btn-sm">
+								← Kembali ke Blog
+							</a>
+						</div>
+
+					</div>
+
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
-	<div class="container py-4">
-		<footer class="pt-3 mt-4 text-muted border-top">
-			<div class="container">
-				&copy; <?= Date('Y') ?>
-			</div>
-		</footer>
-	</div>
+</section>
 
-	<!-- Jquery dan Bootsrap JS -->
-	<script src="<?= base_url('js/jquery.min.js') ?>"></script>
-	<script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
-
-</body>
-
-</html>
+<!-- FOOTER -->
+<?= $this->include('layouts/footer'); ?>

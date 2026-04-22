@@ -1,63 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contact</title>
+<?= $this->include('layouts/header'); ?>
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
-</head>
+<!-- HEADER -->
+<section class="section-top bg-light p-5 text-center">
+	<h1>Contact</h1>
+	<p><a href="<?= base_url('/') ?>">Home</a> / Contact</p>
+</section>
 
-<body>
+<!-- ADDRESS -->
+<section class="container py-5">
+	<div class="row text-center">
 
-	<?= $this->include('layouts/navbar'); ?>
-
-	<div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container py-5">
-        <h1 class="display-5 fw-bold">Contact</h1>
-        
-      </div>
-    </div>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">Alamat</h5>
-					<p>Jl. Contoh No.123, Jakarta, Indonesia</p>
-				</div>
-			</div>
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">Email</h5>
-					<p>info@portalberita.com</p>
-				</div>
-			</div>
-			<div class="col-md-12 my-2 card">
-				<div class="card-body">
-					<h5 class="h5">No. HP</h5>
-					<p>+62 812-3456-7890</p>
-				</div>
-			</div>
+		<div class="col-md-4">
+			<h4>Alamat</h4>
+			<p>Jl. Contoh No.123, Jakarta</p>
 		</div>
-	</div>
-			
+
+		<div class="col-md-4">
+			<h4>Telepon</h4>
+			<p>+62 812-3456-7890</p>
 		</div>
+
+		<div class="col-md-4">
+			<h4>Email</h4>
+			<p>info@portalberita.com</p>
+		</div>
+
 	</div>
-	<div class="container py-4">
-		<footer class="pt-3 mt-4 text-muted border-top">
-			<div class="container">
-				&copy; <?= Date('Y') ?>
-			</div>
-		</footer>
+</section>
+
+<!-- FORM -->
+<section class="container pb-5">
+	<div class="row">
+
+		<div class="col-md-7">
+			<form>
+				<input type="text" class="form-control mb-2" placeholder="Name">
+				<input type="email" class="form-control mb-2" placeholder="Email">
+				<input type="text" class="form-control mb-2" placeholder="Subject">
+				<textarea class="form-control mb-2" rows="5" placeholder="Message"></textarea>
+				<button class="btn btn-primary">Send</button>
+			</form>
+		</div>
+
+		<div class="col-md-5">
+			<iframe 
+				src="https://www.google.com/maps?q=jakarta&output=embed"
+				style="width:100%; height:300px; border:0;">
+			</iframe>
+		</div>
+
 	</div>
+</section>
 
-	<!-- Jquery dan Bootsrap JS -->
-	<script src="<?= base_url('js/jquery.min.js') ?>"></script>
-	<script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
-
-</body>
-
-</html>
+<!-- FOOTER -->
+<?= $this->include('layouts/footer'); ?>
