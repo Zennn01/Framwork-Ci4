@@ -1,69 +1,207 @@
-# CodeIgniter 4 Application Starter
+# UNews - Portal Berita (CodeIgniter 4)
 
-## What is CodeIgniter?
+Project ini adalah aplikasi portal berita berbasis **CodeIgniter 4** dengan fitur:
+- halaman publik (home, about, contact, faq)
+- daftar berita dan detail berita berdasarkan slug
+- panel admin untuk CRUD post
+- autentikasi menggunakan **Myth/Auth**
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Repository: `git@github.com:Zennn01/Framwork-Ci4.git`
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+---
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## 1) Tech Stack
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- PHP `^8.2`
+- CodeIgniter4 Framework `^4.7`
+- Myth/Auth `^1.2`
+- MySQL/MariaDB (driver default: `MySQLi`)
 
-## Installation & updates
+Dependensi utama ada di `composer.json`.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+---
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## 2) Fitur yang Sudah Ada
 
-## Setup
+### Halaman Publik
+- `/` → Home
+- `/about` → About
+- `/contact` → Contact
+- `/faqs` → FAQ
+- `/post` → Daftar berita (hanya status `published`)
+- `/post/{slug}` → Detail berita
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+### Admin Post (Wajib Login)
+Route admin diproteksi filter `login`:
+- `/admin/post` → List semua post
+- `/admin/post/new` → Buat post baru
+- `/admin/post/{id}/preview` → Preview post
+- `/admin/post/{id}/edit` → Edit post
+- `/admin/post/{id}/delete` → Hapus post
 
-## Important Change with index.php
+### Autentikasi
+- Login/Logout menggunakan Myth/Auth (`/login`, `/logout`, dll)
+- Aktivasi email dinonaktifkan (`app/Config/Auth.php`)
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+---
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## 3) Struktur Database
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Tabel utama: `posts`
 
-## Repository Management
+Kolom penting:
+- `id` (primary key)
+- `title`
+- `author` (default: `John Doe`)
+- `content`
+- `status` (`published` / `draft`)
+- `slug` (unique)
+- `created_at`
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Migration:
+- `CreatePostsTable`
+- `AlterPostsTable` (tambah kolom `slug`)
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Seeder:
+- `PostSeeder` (data awal contoh post)
 
-## Server Requirements
+---
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+## 4) Cara Menjalankan Project (Existing Repository)
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+### A. Clone & Install
+```bash
+git clone git@github.com:Zennn01/Framwork-Ci4.git
+cd Framwork-Ci4
+composer install
+```
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+### B. Konfigurasi Environment
+Copy file env:
+```bash
+cp env .env
+```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Lalu ubah minimal bagian ini di `.env`:
+```dotenv
+CI_ENVIRONMENT = development
+app.baseURL = 'http://localhost:8080/'
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+database.default.hostname = localhost
+database.default.database = nama_database
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+database.default.port = 3306
+```
+
+### C. Buat Database & Jalankan Migration
+Buat database di MySQL (misal: `unews_db`), lalu:
+```bash
+php spark migrate
+```
+
+Jika ingin isi data contoh:
+```bash
+php spark db:seed PostSeeder
+```
+
+### D. Jalankan Server
+```bash
+php spark serve
+```
+
+Buka di browser:
+`http://localhost:8080`
+
+---
+
+## 5) Akun Login
+
+Karena pakai Myth/Auth:
+- register via `/register` (jika route aktif)
+- login via `/login`
+
+Setelah login, akses admin di:
+`/admin/post`
+
+---
+
+## 6) Cara Membuat Project Ini dari Nol
+
+Bagian ini untuk recreate project dari awal.
+
+### 1. Inisialisasi CI4
+```bash
+composer create-project codeigniter4/appstarter unews
+cd unews
+```
+
+### 2. Install Auth
+```bash
+composer require myth/auth
+```
+
+### 3. Konfigurasi Auth & Validation
+- Tambahkan rules Myth/Auth di `app/Config/Validation.php`
+- Set `requireActivation = null` di `app/Config/Auth.php`
+- Tambahkan alias filter (`login`, `role`, `permission`) di `app/Config/Filters.php`
+
+### 4. Buat Model, Controller, View
+- Model: `PostModel` (`table: posts`)
+- Controller:
+  - `Home`
+  - `Page`
+  - `Post` (public list + detail)
+  - `PostAdmin` (CRUD admin)
+- View:
+  - public pages (`home`, `about`, `contact`, `faqs`, `post`, `post_detail`)
+  - admin pages (`admin_post_list`, `admin_post_create`, `admin_post_update`)
+
+### 5. Buat Migration & Seeder
+- Migration `CreatePostsTable`
+- Migration `AlterPostsTable` (slug)
+- Seeder `PostSeeder`
+
+Jalankan:
+```bash
+php spark migrate
+php spark db:seed PostSeeder
+```
+
+### 6. Atur Route
+Tambahkan route publik dan admin di `app/Config/Routes.php`, lalu proteksi route admin dengan filter login.
+
+### 7. Jalankan Aplikasi
+```bash
+php spark serve
+```
+
+---
+
+## 7) Command Penting
+
+```bash
+# jalankan local server
+php spark serve
+
+# migration
+php spark migrate
+
+# rollback migration
+php spark migrate:rollback
+
+# seed data
+php spark db:seed PostSeeder
+
+# test (jika ada)
+composer test
+```
+
+---
+
+## 8) Catatan
+
+- Pastikan `baseURL` sesuai port lokal.
+- Folder web root untuk deploy adalah `public/`.
+- Jika menu admin tidak bisa diakses, pastikan sudah login.
