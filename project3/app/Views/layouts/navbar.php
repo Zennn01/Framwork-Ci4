@@ -26,8 +26,11 @@
 
             <!-- Button kanan -->
             <div class="col-20 d-none d-xl-block text-end">
-                <a href="<?= base_url('post') ?>" class="header-btn">Posting</a>
-                <a href="<?= base_url('contact') ?>" class="btn_one">Hubungi</a>
+                <?php if (logged_in()) : ?>
+		            <a class="nav-link" href="<?= base_url('logout') ?>">Logout</a>
+                <?php else: ?>
+                    <a class="nav-link" href="<?= base_url('login') ?>">Login</a>
+                <?php endif; ?>
             </div>
 
             <!-- Mobile Menu -->

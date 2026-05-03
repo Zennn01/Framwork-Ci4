@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Jost:wght@500;600;700&display=swap');
+
+:root {
+  --auth-primary: #525fe1;
+  --auth-accent: #f26b65;
+  --auth-heading: #0b104a;
+  --auth-text: #4a5355;
+  --auth-surface: rgba(255, 255, 255, 0.76);
+}
+
+body.auth-page {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background:
+    linear-gradient(130deg, rgba(82, 95, 225, 0.78), rgba(11, 16, 74, 0.82)),
+    url('../../img/bg/home-bg.jpg') center/cover no-repeat fixed;
+  color: var(--auth-text);
+}
+
+.auth-navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(11, 16, 74, 0.52) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.auth-navbar .navbar-brand,
+.auth-navbar .nav-link {
+  color: #f8fafc !important;
+}
+
+.auth-wrapper {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--auth-surface);
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 20px;
+  box-shadow: 0 24px 45px rgba(11, 16, 74, 0.24);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.auth-card .card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  font-family: "Jost", sans-serif;
+  color: var(--auth-heading);
+  font-weight: 700;
+  font-size: 1.35rem;
+  padding: 1.15rem 1.25rem;
+}
+
+.auth-card .card-body {
+  padding: 1.35rem 1.25rem 1.5rem;
+}
+
+.auth-card .form-group label,
+.auth-card .form-check-label,
+.auth-card .form-text {
+  color: var(--auth-text);
+}
+
+.auth-card .form-control {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(82, 95, 225, 0.24);
+  color: var(--auth-heading);
+  border-radius: 12px;
+  height: calc(2.4rem + 6px);
+}
+
+.auth-card .form-control::placeholder {
+  color: #8a93b3;
+}
+
+.auth-card .form-control:focus {
+  border-color: rgba(82, 95, 225, 0.75);
+  box-shadow: 0 0 0 0.2rem rgba(82, 95, 225, 0.2);
+  background: #fff;
+}
+
+.auth-card .btn-auth {
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  font-family: "Jost", sans-serif;
+  background: linear-gradient(135deg, var(--auth-primary), #616df0);
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.auth-card .btn-auth:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--auth-accent), #f48681);
+  box-shadow: 0 10px 20px rgba(242, 107, 101, 0.26);
+}
+
+.auth-card a {
+  color: var(--auth-primary);
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+}
+
+.auth-card hr {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.auth-card .alert {
+  border-radius: 12px;
+}
+
+@media (max-width: 576px) {
+  .auth-wrapper {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .auth-card .card-header {
+    font-size: 1.2rem;
+  }
+}

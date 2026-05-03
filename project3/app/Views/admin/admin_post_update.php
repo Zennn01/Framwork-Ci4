@@ -5,89 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" hre
-            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin/post') ?>">List</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="<?= base_url('admin/post/new') ?>"
-                           class="btn btn-primary mr-3f="<?= base_url('css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom-admin.css') ?>" />
 </head>
-<body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+<body class="admin-page">
+    <nav class="navbar navbar-expand-lg admin-navbar fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="<?= base_url() ?>">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fw-bold" href="<?= base_url() ?>">UNews Admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin/post') ?>">List</a>
+                        <a class="nav-link" href="<?= base_url('admin/post') ?>">List Post</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="<?= base_url('admin/post/new') ?>"
-                           class="btn btn-primary mr-3">New Post</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin/setting') ?>">Setting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('auth/logout') ?>">Logout</a>
-                    </li>
-                </ul>
+                <div class="d-flex align-items-center stack-mobile flex-column flex-md-row">
+                    <a href="<?= base_url('admin/post/new') ?>" class="btn btn-primary me-md-2">New Post</a>
+                    <a class="btn btn-outline-light me-md-2" href="<?= base_url('admin/setting') ?>">Settings</a>
+                    <a class="btn btn-outline-light" href="<?= base_url('auth/logout') ?>">Logout</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container py-5">
-            <h1 class="display-5 fw-bold">Update </h1>
+    <main class="page-shell">
+        <div class="container">
+            <div class="admin-card p-4 p-md-5 mb-4">
+                <h1 class="page-title h3 mb-1">Edit Post</h1>
+                <p class="page-subtitle mb-0">Perbarui judul, konten, dan status post tanpa mengubah alur backend.</p>
+            </div>
+
+            <div class="admin-card p-4 p-md-5">
+                <form action="" method="post" id="text-editor">
+                    <input type="hidden" name="id" value="<?= $post['id'] ?>" />
+                    <div class="form-group mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="title" id="title" class="form-control"
+                            placeholder="Post title" value="<?= $post['title'] ?>" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="content" class="form-label">Content</label>
+                        <textarea name="content" id="content" class="form-control" cols="30" rows="10"
+                            placeholder="Write a great post!"><?= $post['content'] ?></textarea>
+                    </div>
+                    <div class="d-flex stack-mobile flex-column flex-md-row">
+                        <button type="submit" name="status" value="published"
+                            class="btn btn-primary me-md-2">Publish</button>
+                        <button type="submit" name="status" value="draft"
+                            class="btn btn-outline-secondary">Save to Draft</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="footer-lite text-center mt-4">
+                &copy; <?= Date('Y') ?> UNews
+            </div>
         </div>
-    </div>
-    
-    <!-- update post -->
-    <div class="container">
-        <form action="" method="post" id="text-editor">
-            <input type="hidden" name="id" value="<?= $post['id'] ?>" />
-            <div class="form-group mb-2">
-                <label for="title">Title</label>
-                <input type="text" name="title" class="form-control"
-                    placeholder="Post title" value="<?= $post['title'] ?>" required>
-            </div>
-            <div class="form-group mb-2">
-                <textarea name="content" class="form-control" cols="30" rows="10"
-                        placeholder="Write a great post!"><?= $post['content'] ?></textarea>
-            </div>
-            <div class="form-group mb-2">
-                <button type="submit" name="status" value="published"
-                        class="btn btn-primary">Publish</button>
-                <button type="submit" name="status" value="draft"
-                        class="btn btn-secondary">Save to Draft</button>
-            </div>
-        </form>
-    </div>
+    </main>
 
-    <div class="container py-4">
-        <footer class="pt-3 mt-4 text-muted border-top">
-            <div class="container">
-                &copy; <?= Date('Y') ?>
-            </div>
-        </footer>
-    </div>
-
-    <!-- jQuery dan Bootstrap JS -->
-    <script src="<?= base_url('js/jquery.min.js') ?>"></script>
     <script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
 
 </body>
+
 </html>

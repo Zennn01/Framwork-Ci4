@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Jost:wght@500;600;700&display=swap');
+
+:root {
+  --admin-bg: #f5f6ff;
+  --admin-surface: #ffffff;
+  --admin-heading: #0b104a;
+  --admin-text: #4a5355;
+  --admin-muted: #7d83a3;
+  --admin-primary: #525fe1;
+  --admin-accent: #f26b65;
+  --admin-danger: #dc2626;
+}
+
+body.admin-page {
+  background: linear-gradient(160deg, #eef0ff 0%, #f9faff 42%, #f2f4ff 100%);
+  color: var(--admin-text);
+  font-family: "DM Sans", sans-serif;
+  min-height: 100vh;
+}
+
+.admin-navbar {
+  background: rgba(11, 16, 74, 0.92) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 25px rgba(15, 23, 42, 0.2);
+}
+
+.admin-navbar .navbar-brand,
+.admin-navbar .nav-link {
+  color: #e2e8f0 !important;
+}
+
+.admin-page .page-shell {
+  padding-top: 88px;
+  padding-bottom: 28px;
+}
+
+.admin-page .admin-card {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 18px 35px rgba(82, 95, 225, 0.1);
+  background-color: var(--admin-surface);
+}
+
+.admin-page .page-title {
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
+  color: var(--admin-heading);
+  letter-spacing: 0.2px;
+}
+
+.admin-page .page-subtitle {
+  color: var(--admin-muted);
+}
+
+.admin-page .btn {
+  font-family: "Jost", sans-serif;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.admin-page .btn:hover {
+  transform: translateY(-1px);
+}
+
+.admin-page .btn-primary {
+  background: linear-gradient(135deg, var(--admin-primary), #616df0);
+  border: none;
+}
+
+.admin-page .btn-primary:hover {
+  background: linear-gradient(135deg, var(--admin-accent), #f48681);
+}
+
+.admin-page .btn-outline-secondary {
+  border-color: #cfd4ff;
+  color: #3f4874;
+}
+
+.admin-page .btn-outline-danger {
+  border-color: #fecaca;
+  color: var(--admin-danger);
+}
+
+.admin-page .table-wrap {
+  overflow-x: auto;
+}
+
+.admin-page .table {
+  min-width: 680px;
+}
+
+.admin-page .table th {
+  border-top: none;
+  color: #51577c;
+  font-family: "Jost", sans-serif;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-page .table td {
+  vertical-align: middle;
+}
+
+.admin-page .status-pill {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.admin-page .status-pill.published {
+  color: #2747be;
+  background: #e5e9ff;
+}
+
+.admin-page .status-pill.draft {
+  color: #6b728f;
+  background: #eceffd;
+}
+
+.admin-page .form-label {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  color: #313b77;
+}
+
+.admin-page .form-control {
+  border-radius: 10px;
+  border-color: #dbe2ea;
+}
+
+.admin-page .form-control:focus {
+  border-color: rgba(82, 95, 225, 0.65);
+  box-shadow: 0 0 0 0.2rem rgba(82, 95, 225, 0.18);
+}
+
+.admin-page .footer-lite {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 768px) {
+  .admin-page .page-shell {
+    padding-top: 78px;
+  }
+
+  .admin-page .stack-mobile {
+    gap: 0.5rem;
+  }
+
+  .admin-page .stack-mobile .btn {
+    width: 100%;
+  }
+}
